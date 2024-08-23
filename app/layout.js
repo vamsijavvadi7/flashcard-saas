@@ -8,6 +8,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/react"
 import {
   Box,
   AppBar,
@@ -96,6 +97,7 @@ export default function RootLayout({ children }) {
             }}
             position="fixed"
           >
+            <Analytics/>
             <Toolbar>
               {/* Always show Menu Icon */}
               <SignedIn>
