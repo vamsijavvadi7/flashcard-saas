@@ -8,7 +8,7 @@ import { SignedOut, SignedIn, UserButton, useClerk } from "@clerk/nextjs";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { Accessibility, Baby, Eye, School, FileText, Folder } from 'lucide-react'; // Added icons for the features
+import { Baby, Eye, School, FileText, Folder } from 'lucide-react'; // Added icons for the features
 import Contact from './contact/contact'
 
 export default function Home() {
