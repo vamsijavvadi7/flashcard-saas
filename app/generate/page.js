@@ -132,7 +132,7 @@ export default function Generate() {
   }
   return (
     <Container maxWidth="md" sx={{backgroundColor: '#f9fcff',
-      height:'100vh',
+     
       background:'grey',
       backgroundImage: 'linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);',p:6,borderRadius:'5px' }}>
       <Box

@@ -174,12 +174,7 @@ export default function RootLayout({ children }) {
             {loading ? <Loading3D /> : children}
           </main>
           
-          {/* Footer */}
-          <Box sx={{ py: 2, textAlign: 'center', backgroundColor: '#333', color: '#FFF', marginTop: 'auto' }}>
-            <Typography variant="body2">
-              &copy; 2024 Flashcard Learning Platform. All rights reserved.
-            </Typography>
-          </Box>
+       
         </body>
       </html>
     </ClerkProvider>
