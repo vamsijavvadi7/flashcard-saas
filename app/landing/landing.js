@@ -138,7 +138,7 @@ const Landing = () => {
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-gold">Is there a limit to how many flashcards I can create?</AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  No, there's no limit! You can create as many flashcards as you need for your studies.
+                  No, there&#39;s no limit! You can create as many flashcards as you need for your studies.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">

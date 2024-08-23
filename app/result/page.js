@@ -16,6 +16,26 @@ export default function ResultPage() {
   
     // ... (rest of the component)
   
+    useEffect(() => {
+      const fetchCheckoutSession = async () => {
+        if (!session_id) return
+        try {
+          const res = await fetch(`/api/checkout_sessions?session_id=${session_id}`)
+          const sessionData = await res.json()
+          if (res.ok) {
+            setSession(sessionData)
+          } else {
+            setError(sessionData.error)
+          }
+        } catch (err) {
+          setError('An error occurred while retrieving the session.')
+        } finally {
+          setLoading(false)
+        }
+      }
+      fetchCheckoutSession()
+    }, [session_id])
+  
   if (loading) {
     return (
       <Container maxWidth="sm" sx={{textAlign: 'center', mt: 4}}>
@@ -39,29 +59,9 @@ export default function ResultPage() {
     )
   }
 
-  useEffect(() => {
-    const fetchCheckoutSession = async () => {
-      if (!session_id) return
-      try {
-        const res = await fetch(`/api/checkout_sessions?session_id=${session_id}`)
-        const sessionData = await res.json()
-        if (res.ok) {
-          setSession(sessionData)
-        } else {
-          setError(sessionData.error)
-        }
-      } catch (err) {
-        setError('An error occurred while retrieving the session.')
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchCheckoutSession()
-  }, [session_id])
-
   return (
     <Container maxWidth="sm" sx={{textAlign: 'center', mt: 4}}>
-      {session.payment_status === 'paid' ? (
+      {session?.payment_status === 'paid' ? (
         <>
           <Typography variant="h4">Thank you for your purchase!</Typography>
           <Box sx={{mt: 2}}>
