@@ -10,7 +10,7 @@ const formatAmountForStripe = (amount, currency) => {
 
 export async function POST(req) {
   
-  console.log("vamsijavvadi421")
+ 
   try {
     const params = {
         mode: 'subscription',
