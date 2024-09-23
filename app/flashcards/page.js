@@ -1,10 +1,10 @@
 'use client';
 
 import { useUser } from "@clerk/nextjs";
-import { Box, Card, CardActionArea, CardContent, Container, Grid, Typography, CircularProgress, TextField, Button } from "@mui/material";
+import { Box, Button, Card, CardActionArea, CardContent, Container, Grid, TextField, Typography } from "@mui/material";
+import { collection, doc, getDoc, setDoc } from 'firebase/firestore';
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { collection, doc, getDoc, setDoc } from 'firebase/firestore';
 import db from '../firebase';
 import Loading3D from "../Loading/loader";
 
@@ -52,8 +52,8 @@ export default function FlashcardsPage() {
   if (loading) {
     return (
       <Container maxWidth="md" sx={{ textAlign: 'center', mt: 4 }}>
-        <CircularProgress color="primary" />
-        <Typography variant="h6" sx={{ mt: 2 }}>Loading...</Typography>
+        {/* <CircularProgress color="primary" /> */}
+        <Typography variant="h6" sx={{ mt: 2 }}><Loading3D/></Typography>
         {/* <Loading3D/> */}
       </Container>
     );

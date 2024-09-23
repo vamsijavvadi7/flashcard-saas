@@ -1,6 +1,6 @@
 // src/components/Loading3D.js
 'use client'
-import React from 'react';
+
 import styled from 'styled-components';
 
 const LoaderContainer = styled.div`
@@ -8,7 +8,7 @@ const LoaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #282c34; /* Dark background for contrast */
+  // background-color: #282c34; /* Dark background for contrast */
 `;
 
 const Cube = styled.div`
@@ -56,7 +56,7 @@ const Loading3D = () => {
   return (
     <LoaderContainer>
       <Cube>
-        <Face>Loading...</Face>
+        <Face></Face>
         <Face></Face>
         <Face></Face>
         <Face></Face>
@@ -64,6 +64,9 @@ const Loading3D = () => {
         <Face></Face>
       </Cube>
     </LoaderContainer>
+    // <LoaderContainer>
+    // <CircularProgress />
+    // </LoaderContainer>
   );
 };
 
